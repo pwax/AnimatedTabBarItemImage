@@ -15,8 +15,8 @@ class AnimatedTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstItemView = self.tabBar.subviews[1]
-        self.secondItemImageView = firstItemView.subviews.first as! UIImageView
+        let secondItemView = self.tabBar.subviews[1]
+        self.secondItemImageView = secondItemView.subviews.first as! UIImageView
         self.secondItemImageView.contentMode = .Center
         
     }
