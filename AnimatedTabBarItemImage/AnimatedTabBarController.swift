@@ -17,28 +17,22 @@ class AnimatedTabBarController: UITabBarController {
         
         let secondItemView = self.tabBar.subviews[1]
         self.secondItemImageView = secondItemView.subviews.first as! UIImageView
-        self.secondItemImageView.contentMode = .Center
+        self.secondItemImageView.contentMode = .center
         
     }
-    
-    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-        
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if item.tag == 1{
             //do our animations
             
-            self.secondItemImageView.transform = CGAffineTransformIdentity
+            self.secondItemImageView.transform = CGAffineTransform.identity
             
-            UIView.animateWithDuration(0.7, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .CurveEaseInOut, animations: { () -> Void in
+            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut, animations: { () -> Void in
                 
-                let rotation = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+                let rotation = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
                 self.secondItemImageView.transform = rotation
                 
-                }, completion: nil)
+            }, completion: nil)
             
         }
-        
     }
-    
-    
-    
 }
